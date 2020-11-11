@@ -594,11 +594,11 @@ hr {
 }
 
 #thread__wrapper{
-    max-width: 950px;
-    display: flex;
-    flex-direction: column;
-    margin: 60px auto;
-    padding: 40px; 
+    max-width: 950px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin: 60px auto !important;
+    padding: 40px !important; 
 }
 @media only screen and (min-width:40.063em) and (max-width:64em) {
   ul.menu li {
