@@ -9,21 +9,19 @@ new stepsForm(theForm, {
   onSubmit: function (form) {
     // hide form
     classie.addClass(theForm.querySelector('.simform-inner'), 'hide');
-    //console.log("Submitted Request");
+    console.log("Submitted Request");
 
     var link = "https://docs.google.com/forms/d/e/1FAIpQLSe14EwvqxmFY7jJNObgiZU26n5Obqp_9Q3784eXGordlJoUyw/formResponse";
     jQuery.ajax({
       url: link,
-      data: { "entry.1211578586": $("#q2").val(), "entry.1444444207": $("#q3").val(), "entry.1370046773": $("#q1").val() },
+      data: { "entry.1211578586": $("#q2").val().trim(), "entry.1444444207": $("#q3").val().trim(), "entry.1370046773": $("#q1").val().trim() },
       type: "POST",
       dataType: "xml",
       crossDomain: true,
       statusCode: {
         0: function () {
-          // console.log("response 0");
-        },
-        200: function () {
-          // console.log("response 200");
+          // Ignore any error in console by google while submitting this. Message will be sent regardless of error.
+          console.log("Status Code 0, Please ignore this, your message has been sent.");
         }
       }
       
@@ -53,14 +51,16 @@ $(document).ready(function () {
     });
   } //end numberAnimations
 });//end document ready
-function changeImage() {
-  $(".downloadCV").html("<p>Download my Resume</p><img src='img/dwnld.gif'>");
-  setTimeout(() => {
-    window.open("https://docs.google.com/uc?authuser=0&id=0BzUOptk4o8-NY0xOVnBKOTBDdm8&export=download");
-  }, 6000)
-  $(".resume").addClass("downloaded");
-  $(".downloaded").removeClass("resume");
-}
+
+// Removed unused code due to broken link
+// function changeImage() {
+//   $(".downloadCV").html("<p>Download my Resume</p><img src='img/dwnld.gif'>");
+//   setTimeout(() => {
+//     window.open("https://docs.google.com/uc?authuser=0&id=0BzUOptk4o8-NY0xOVnBKOTBDdm8&export=download");
+//   }, 6000)
+//   $(".resume").addClass("downloaded");
+//   $(".downloaded").removeClass("resume");
+// }
 // ###################################################################
 
 var skills = [
