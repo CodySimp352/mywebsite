@@ -24,6 +24,12 @@
 	text-align: center;
 }
 
+.cbp-fwslider ul li iframe {
+	max-width: 100%;
+	height: auto;
+	aspect-ratio: 16/9;
+}
+
 .cbp-fwslider ul li > a,
 .cbp-fwslider ul li > div {
 	display: block;
@@ -49,8 +55,8 @@
 
 .cbp-fwslider nav span {
 	position: absolute;
-  top: 40%;
-    width: 48px;
+  top: 80%;
+  width: 48px;
   height: 28px;
 
   color: #fff;
@@ -59,6 +65,12 @@
   line-height: 100px;
   cursor: pointer;
   opacity: 0.5
+}
+
+@media only screen and (min-width: 780px) {
+  .cbp-fwslider nav span {
+    top: 40%;
+  }
 }
 
 .cbp-fwslider nav span:hover {
